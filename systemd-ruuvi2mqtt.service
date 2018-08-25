@@ -1,0 +1,24 @@
+# Copy this file to /etc/systemd/system/ruuvi2mqtt.service and then
+#     sudo systemctl start ruuvi2mqtt.service
+# and to start on boot:
+#     sudo systemctl enable ruuvi2mqtt.service
+# To consult the log : sudo journalctl -u ruuvi2mqtt
+
+[Unit]
+Description=RuuviTag -> MQTT bridge
+Documentation=https://github.com/ppetru/ruuvi2mqtt
+
+[Service]
+ExecStart=/home/pi/ruuvi2mqtt/start.sh
+WorkingDirectory=/home/pi/ruuvi2mqtt
+User=pi
+Group=daemon
+Nice=10
+SyslogIdentifier=ruuvi2mqtt
+StandardOutput=syslog
+Restart=on-failure
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
+

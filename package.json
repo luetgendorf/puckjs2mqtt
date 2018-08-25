@@ -1,21 +1,22 @@
 {
-  "name": "EspruinoHub",
+  "name": "ruuvi2mqtt",
   "version": "0.0.0",
-  "description": "Linux based hub software for Puck.js / Espruino",
+  "description": "A RuuviTag -> MQTT bridge supporting Home Assistant MQTT discovery",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Espruino/EspruinoHub.git"
+    "url": "git+ssh://git@github.com/ppetru/ruuvi2mqtt.git"
   },
   "bugs": {
-    "url": "https://github.com/espruino/EspruinoHub/issues"
+    "url": "https://github.com/ppetru/ruuvi2mqtt/issues"
   },
-  "homepage": "https://github.com/espruino/EspruinoHub#readme",
+  "homepage": "https://github.com/ppetru/ruuvi2mqtt#readme",
   "keywords": [
-    "espruino"
+    "ruuvitag",
+    "mqtt",
   ],
-  "author": "Gordon Williams (gw@pur3.co.uk)",
+  "author": "Petru Paler (petru@paler.net)",
   "license": "MPL-2.0",
   "dependencies": {
     "binary-parser": "^1.3.2",
