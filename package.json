@@ -14,7 +14,7 @@
   "homepage": "https://github.com/ppetru/ruuvi2mqtt#readme",
   "keywords": [
     "ruuvitag",
-    "mqtt",
+    "mqtt"
   ],
   "author": "Petru Paler (petru@paler.net)",
   "license": "MPL-2.0",
