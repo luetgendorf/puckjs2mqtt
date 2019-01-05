@@ -1,4 +1,4 @@
-ruuvi2mqtt
+puckjs2mqtt
 ===========
 
 A [RuuviTag](https://ruuvi.com/) -> MQTT bridge supporting [Home Assistant MQTT discovery](https://www.home-assistant.io/docs/mqtt/discovery/).
@@ -26,10 +26,10 @@ Ideally use a Raspberry Pi 3 or Zero W, as these have Bluetooth LE on them alrea
 # Install Node, Bluetooth, etc
 sudo apt-get update
 sudo apt-get install git-core nodejs nodejs-legacy npm build-essential mosquitto mosquitto-clients bluetooth bluez libbluetooth-dev libudev-dev
-# Now get ruuvi2mqtt
-git clone https://github.com/ppetru/ruuvi2mqtt
-# Install ruuvi2mqtt's required Node libraries
-cd ruuvi2mqtt
+# Now get puckjs2mqtt
+git clone https://github.com/ppetru/puckjs2mqtt
+# Install puckjs2mqtt's required Node libraries
+cd puckjs2mqtt
 npm install
 # Optional - enable gathering of historical data by creating a 'log' directory
 mkdir log
@@ -37,43 +37,43 @@ mkdir log
 sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)
 ```
 
-You can now type `./start.sh` to run ruuvi2mqtt, but it's worth checking out the `Auto Start` section to see how to get it to run at boot.
+You can now type `./start.sh` to run puckjs2mqtt, but it's worth checking out the `Auto Start` section to see how to get it to run at boot.
 
 ### Auto Start
 
-There are a 2 main ways to run ruuvi2mqtt on the Raspberry Pi.
+There are a 2 main ways to run puckjs2mqtt on the Raspberry Pi.
 
 #### Headless Startup
 
 This is the normal way of running services - to configure them as a system start-up job using `systemd`:**
 
 ```
-    sudo cp systemd-ruuvi2mqtt.service /etc/systemd/system/ruuvi2mqtt.service
+    sudo cp systemd-puckjs2mqtt.service /etc/systemd/system/puckjs2mqtt.service
 ```
 
 and edit it as necessary to match your installation directory and user configuration.  Then, to start it for testing:
 
 ```
-    sudo systemctl start ruuvi2mqtt.service && sudo journalctl -f -u ruuvi2mqtt
+    sudo systemctl start puckjs2mqtt.service && sudo journalctl -f -u puckjs2mqtt
 ```
 
 If it works, Ctrl-C to break out and enable it to start on login:
 
 ```
-    sudo systemctl enable ruuvi2mqtt.service
+    sudo systemctl enable puckjs2mqtt.service
 ```
 
 
 #### Console Startup
 
-If you have a video output on your Pi then you can run ruuvi2mqtt at boot - on the main display - so that you can see what it's reporting.
+If you have a video output on your Pi then you can run puckjs2mqtt at boot - on the main display - so that you can see what it's reporting.
 
 * Edit `.bashrc` and add the following right at the bottom:
 
 ```
 if [ $(tty) == /dev/tty1 ]; then
   while true; do
-    ruuvi2mqtt/start.sh
+    puckjs2mqtt/start.sh
     sleep 1s
   done
 fi
@@ -81,7 +81,7 @@ fi
 
 * Now run `sudo raspi-config`, choose `Boot Options`, `Desktop / CLI`, and `Console Autologin`
 
-* Next time you reboot, the console will automatically run `ruuvi2mqtt`
+* Next time you reboot, the console will automatically run `puckjs2mqtt`
 
 Usage
 -----
