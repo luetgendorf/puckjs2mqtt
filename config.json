@@ -14,16 +14,12 @@
   "// Setting a value of 0 disables the exit/restart.":0,
   "ble_timeout": 20,
 
-  "// We can add our own custom advertising UUIDs here with names to help decode them":0, 
+  "// We can add our own custom advertising UUIDs here with names to help decode them":0,
   "advertised_services" : {
     "ffff" : {
       "name" : "level"
     }
   },
 
-  "mqtt_host": "mqtt://zippy.lan",
-  "//mqtt_options": {
-    "username": "user",
-    "password": "pass"
-  }
+  "mqtt_host": "mqtt://localhost"
 }
